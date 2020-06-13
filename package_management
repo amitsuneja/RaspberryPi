@@ -1,0 +1,38 @@
+dpkg-query -l -> list installed packages
+
+dpkg-query -l 'bin*'
+
+apt-get install apt-file
+apt-file update
+apt-file search gpio
+
+root@raspberrypi:/amit# dpkg -S /bin/ls
+coreutils: /bin/ls
+
+root@raspberrypi:/amit# dpkg -s coreutils
+Package: coreutils
+Essential: yes
+Status: install ok installed
+Priority: required
+Section: utils
+Installed-Size: 14253
+Maintainer: Michael Stone <mstone@debian.org>
+Architecture: armhf
+Multi-Arch: foreign
+Version: 8.30-3
+Pre-Depends: libacl1 (>= 2.2.23), libattr1 (>= 1:2.4.44), libc6 (>= 2.28), libselinux1 (>= 2.1.13)
+Description: GNU core utilities
+ This package contains the basic file, shell and text manipulation
+ utilities which are expected to exist on every operating system.
+ Specifically, this package includes:
+ arch base64 basename cat chcon chgrp chmod chown chroot cksum comm cp
+ csplit cut date dd df dir dircolors dirname du echo env expand expr
+ factor false flock fmt fold groups head hostid id install join link ln
+ logname ls md5sum mkdir mkfifo mknod mktemp mv nice nl nohup nproc numfmt
+ od paste pathchk pinky pr printenv printf ptx pwd readlink realpath rm
+ rmdir runcon sha*sum seq shred sleep sort split stat stty sum sync tac
+ tail tee test timeout touch tr true truncate tsort tty uname unexpand
+ uniq unlink users vdir wc who whoami yes
+Homepage: http://gnu.org/software/coreutils
+root@raspberrypi:/amit#
+
