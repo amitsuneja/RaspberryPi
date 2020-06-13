@@ -1,0 +1,146 @@
+root@raspberrypi:/amit# apt-get purge wiringpi
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages will be REMOVED:
+  wiringpi*
+0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] y
+(Reading database ... 158665 files and directories currently installed.)
+Removing wiringpi (2.50) ...
+
+
+
+
+
+root@raspberrypi:/amit# hash -r
+
+
+
+root@raspberrypi:/amit# apt-get install git-core
+Reading package lists... Done
+
+Building dependency tree
+Reading state information... Done
+Note, selecting 'git' instead of 'git-core'
+git is already the newest version (1:2.20.1-2+deb10u3).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+
+
+
+root@raspberrypi:/amit# apt-get update
+Hit:1 http://raspbian.raspberrypi.org/raspbian buster InRelease
+0% [Connecting to archive.raspberrypi.org]
+Hit:2 http://archive.raspberrypi.org/debian buster InRelease
+Reading package lists... Done
+
+
+
+root@raspberrypi:/amit# apt-get upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+
+
+root@raspberrypi:/amit# git clone git://github.com/WiringPi/WiringPi
+Cloning into 'WiringPi'...
+remote: Enumerating objects: 1390, done.
+remote: Total 1390 (delta 0), reused 0 (delta 0), pack-reused 1390
+Receiving objects: 100% (1390/1390), 742.52 KiB | 1013.00 KiB/s, done.
+Resolving deltas: 100% (863/863), done.
+root@raspberrypi:/amit# ls
+commands.txt  WiringPi
+root@raspberrypi:/amit# cd WiringPi/
+root@raspberrypi:/amit/WiringPi# ./build
+wiringPi Build script
+=====================
+
+WiringPi Library
+[UnInstall]
+
+root@raspberrypi:/amit/WiringPi# ls
+build           debian           devLib    gpio     newVersion  pins       update   version.h  wiringPiD
+COPYING.LESSER  debian-template  examples  INSTALL  People      README.md  VERSION  wiringPi
+
+
+root@raspberrypi:/amit/WiringPi# pwd
+/amit/WiringPi
+root@raspberrypi:/amit/WiringPi# cd gpio
+
+root@raspberrypi:/amit/WiringPi/gpio# sh pintest
+PinTest
+=======
+
+This is a simple utility to test the GPIO pins on your Raspberry Pi.
+
+NOTE: All GPIO peripherals must be removed to perform this test. This
+  includes serial, I2C and SPI connections. You may get incorrect results
+  if something is connected and it interferes with the test.
+
+This test can only test the input side of things. It uses the internal
+pull-up and pull-down resistors to simulate inputs. It does not test
+the output drivers.
+
+You will need to reboot your Pi after this test if you wish to use the
+serial port as it will be left in GPIO mode rather than serial mode.
+
+This test only tests the original pins present on the Rev A and B. It
+does not test the extra pins on the Revision A2, B2 nor the A+ or B+
+
+Please make sure everything is removed and press the ENTER key to continue,
+or Control-C to abort...
+
+          The main 8 GPIO pins  0: 7:
+ --> Pin 0 failure. Expected 1, got 0
+pintest: 34: pintest: let: not found
+
+ --> Pin 2 failure. Expected 1, got 0
+pintest: 34: pintest: let: not found
+ OK
+pintest: 101: pintest: let: not found
+                The 5 SPI pins 10:14:  OK
+pintest: 101: pintest: let: not found
+               The serial pins 15:16:  OK
+pintest: 101: pintest: let: not found
+                  The I2C pins  8: 9:  OK
+
+root@raspberrypi:/amit/WiringPi/gpio# gpio readall
+ +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ |     |     |    3.3v |      |   |  1 || 2  |   |      | 5v      |     |     |
+ |   2 |   8 |   SDA.1 |   IN | 1 |  3 || 4  |   |      | 5v      |     |     |
+ |   3 |   9 |   SCL.1 |   IN | 1 |  5 || 6  |   |      | 0v      |     |     |
+ |   4 |   7 | GPIO. 7 |   IN | 0 |  7 || 8  | 1 | IN   | TxD     | 15  | 14  |
+ |     |     |      0v |      |   |  9 || 10 | 1 | IN   | RxD     | 16  | 15  |
+ |  17 |   0 | GPIO. 0 |   IN | 0 | 11 || 12 | 1 | IN   | GPIO. 1 | 1   | 18  |
+ |  27 |   2 | GPIO. 2 |   IN | 0 | 13 || 14 |   |      | 0v      |     |     |
+ |  22 |   3 | GPIO. 3 |   IN | 1 | 15 || 16 | 1 | IN   | GPIO. 4 | 4   | 23  |
+ |     |     |    3.3v |      |   | 17 || 18 | 1 | IN   | GPIO. 5 | 5   | 24  |
+ |  10 |  12 |    MOSI |   IN | 1 | 19 || 20 |   |      | 0v      |     |     |
+ |   9 |  13 |    MISO |   IN | 1 | 21 || 22 | 1 | IN   | GPIO. 6 | 6   | 25  |
+ |  11 |  14 |    SCLK |   IN | 1 | 23 || 24 | 1 | IN   | CE0     | 10  | 8   |
+ |     |     |      0v |      |   | 25 || 26 | 1 | IN   | CE1     | 11  | 7   |
+ |   0 |  30 |   SDA.0 |   IN | 1 | 27 || 28 | 1 | IN   | SCL.0   | 31  | 1   |
+ |   5 |  21 | GPIO.21 |   IN | 1 | 29 || 30 |   |      | 0v      |     |     |
+ |   6 |  22 | GPIO.22 |   IN | 1 | 31 || 32 | 0 | IN   | GPIO.26 | 26  | 12  |
+ |  13 |  23 | GPIO.23 |   IN | 0 | 33 || 34 |   |      | 0v      |     |     |
+ |  19 |  24 | GPIO.24 |   IN | 0 | 35 || 36 | 0 | IN   | GPIO.27 | 27  | 16  |
+ |  26 |  25 | GPIO.25 |   IN | 0 | 37 || 38 | 0 | IN   | GPIO.28 | 28  | 20  |
+ |     |     |      0v |      |   | 39 || 40 | 0 | IN   | GPIO.29 | 29  | 21  |
+ +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
+ | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
+
+root@raspberrypi:/amit#  raspi-gpio get 20
+GPIO 20: level=0 fsel=0 func=INPUT pull=DOWN
+root@raspberrypi:/amit# raspi-gpio get 20,21
+GPIO 20: level=0 fsel=0 func=INPUT pull=DOWN
+GPIO 21: level=0 fsel=0 func=INPUT pull=DOWN
+
+ +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
+
