@@ -53,9 +53,15 @@ remote: Enumerating objects: 1390, done.
 remote: Total 1390 (delta 0), reused 0 (delta 0), pack-reused 1390
 Receiving objects: 100% (1390/1390), 742.52 KiB | 1013.00 KiB/s, done.
 Resolving deltas: 100% (863/863), done.
+
+
 root@raspberrypi:/amit# ls
 commands.txt  WiringPi
+
+
 root@raspberrypi:/amit# cd WiringPi/
+
+
 root@raspberrypi:/amit/WiringPi# ./build
 wiringPi Build script
 =====================
