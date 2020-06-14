@@ -1,0 +1,16 @@
+
+Setting up is very similar to the way we set things up for inputs, but instead of…
+
+GPIO.setup(port_or_pin, GPIO.IN)
+
+we use…
+
+GPIO.setup(port_or_pin, GPIO.OUT)
+
+Then, to switch the port/pin to 3.3V (equals 1/GPIO.HIGH/True)…
+
+GPIO.output(port_or_pin, 1)
+
+Or, to switch the port/pin to 0V (equals 0/GPIO.LOW/False)…
+
+GPIO.output(port_or_pin, 0)
