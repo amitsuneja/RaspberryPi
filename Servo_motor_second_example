@@ -1,0 +1,44 @@
+root@raspberrypi:/car/sensors_and_motors# cat servo_motor.py
+# servo_scan.py - Test functionality of SG90 Micro Servo
+#
+# Written By: David Such
+
+import RPi.GPIO as GPIO
+import time
+
+MIN_DUTY = 1
+MAX_DUTY = 13
+CENTRE = MIN_DUTY + (MAX_DUTY - MIN_DUTY) / 2
+
+servo_motor_pin = 40
+duty_cycle = CENTRE     # Should be the centre for a SG90
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(servo_motor_pin, GPIO.OUT)
+
+# Create PWM channel on the servo pin with a frequency of 50Hz
+pwm_servo = GPIO.PWM(servo_motor_pin, 50)
+pwm_servo.start(duty_cycle)
+
+try:
+    while True:
+        pwm_servo.ChangeDutyCycle(CENTRE)
+        print("i am at my center")
+        time.sleep(1)
+        pwm_servo.ChangeDutyCycle(MIN_DUTY)
+        print("I am at my min")
+        time.sleep(1)
+        pwm_servo.ChangeDutyCycle(CENTRE)
+        print("i am at my center")
+        time.sleep(1)
+        pwm_servo.ChangeDutyCycle(MAX_DUTY)
+        print("i am at my max")
+        time.sleep(1)
+
+except KeyboardInterrupt:
+    print("CTRL-C: Terminating program.")
+finally:
+    print("Cleaning up GPIO...")
+    pwm_servo.ChangeDutyCycle(CENTRE)
+    time.sleep(0.5)
+    GPIO.cleanup()
