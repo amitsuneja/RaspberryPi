@@ -1,0 +1,12 @@
+1. use raspberry pi imager.
+2. created ssh empty file.
+3. cat wpa_supplicant.conf
+country=IN
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="Amit_5G"
+    psk="amit@1234"
+}
+4. Eject SDcard
