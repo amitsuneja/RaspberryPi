@@ -7,6 +7,6 @@ update_config=1
 
 network={
     ssid="Amit_5G"
-    psk="amit@1234"
+    psk="amit***************"
 }
 4. Eject SDcard
