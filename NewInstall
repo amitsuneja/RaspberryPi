@@ -10,3 +10,12 @@ network={
     psk="amit***************"
 }
 4. Eject SDcard
+5. Insert into computer and boot.
+6. run angry IP scanner to know IP of new server.
+7. login pi and rapsberry and sudo to root.
+8. passwd root and password oi
+9. change 
+#PermitRootLogin prohibit-password
+TO
+PermitRootLogin yes
+10. From new session login as root
