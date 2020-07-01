@@ -1,4 +1,7 @@
 # RaspberryPi
+https://www.dlology.com/blog/how-to-train-an-object-detection-model-easy-for-free/
+
+https://colab.research.google.com/drive/1zupwhAquO0Yy1NopZovgD6MBtumwimrP#scrollTo=uQCnYPVDrsgx
 
 https://www.electronicshub.org/raspberry-pi-l298n-interface-tutorial-control-dc-motor-l298n-raspberry-pi/ 
 
