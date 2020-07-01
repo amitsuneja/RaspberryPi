@@ -27,6 +27,8 @@ image captioning (IC)-  is the task of automatically generating a textual descri
 
 segmentation -  image segmentation is the process of partitioning a digital image into multiple segments (sets of pixels, also known as image objects). ... Image segmentation is typically used to locate objects and boundaries (lines, curves, etc.) in images.
 
+Object detection - is a computer technology related to computer vision and image processing that deals with detecting instances of semantic objects of a certain class (such as humans, buildings, or cars) in digital images and videos.
+
 https://colah.github.io/ , https://colah.github.io/posts/2014-07-Understanding-Convolutions/
 
 https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coco-dataset-in-pytorch-319e7090da5
