@@ -23,3 +23,6 @@ https://www.w3schools.com/graphics/google_maps_intro.asp
 -------------------------------------------------------------
 https://towardsdatascience.com/master-the-coco-dataset-for-semantic-image-segmentation-part-1-of-2-732712631047
 image captioning (IC), is the task of automatically generating a textual description for a given image.
+
+
+https://colah.github.io/ , https://colah.github.io/posts/2014-07-Understanding-Convolutions/
