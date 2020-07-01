@@ -29,6 +29,10 @@ segmentation -  image segmentation is the process of partitioning a digital imag
 
 Object detection - is a computer technology related to computer vision and image processing that deals with detecting instances of semantic objects of a certain class (such as humans, buildings, or cars) in digital images and videos.
 
+Image augmentation - is a technique that is used to artificially expand the data-set. Image augmentation parameters that are generally used to increase the data sample count are zoom, shear, rotation, preprocessing_function and so on. Usage of these parameters results in generation of images having these attributes during training of Deep Learning model. Image samples generated using image augmentation, in general results in increase of existing data sample set by nearly 3x to 4x times.
+
+
+
 https://colah.github.io/ , https://colah.github.io/posts/2014-07-Understanding-Convolutions/
 
 https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coco-dataset-in-pytorch-319e7090da5
