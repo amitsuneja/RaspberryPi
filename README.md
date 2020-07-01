@@ -26,3 +26,5 @@ image captioning (IC), is the task of automatically generating a textual descrip
 
 
 https://colah.github.io/ , https://colah.github.io/posts/2014-07-Understanding-Convolutions/
+
+https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coco-dataset-in-pytorch-319e7090da5
