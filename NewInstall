@@ -141,5 +141,6 @@ apt-get install samba > Modify smb.conf to use WINS settings from DHCP? NO
 
 
 21.
+root@raspberrypi:/etc/ssh# apt-get install minicom
 
 
