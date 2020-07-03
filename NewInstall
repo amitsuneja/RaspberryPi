@@ -137,5 +137,9 @@ raspi-config > Localisation Options > Change Time Zone > Asia > Kolkata
 
 
 20.
-apt-get install samba
+apt-get install samba > Modify smb.conf to use WINS settings from DHCP? NO
+
+
+21.
+
 
