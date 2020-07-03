@@ -149,21 +149,15 @@ root@raspberrypi:/etc/ssh# apt-get install minicom
 
 root@raspberrypi:/dev# gpio -v
 gpio version: 2.50
-Copyright (c) 2012-2018 Gordon Henderson
-This is free software with ABSOLUTELY NO WARRANTY.
-For details type: gpio -warranty
-
-Raspberry Pi Details:
-  Type: Unknown17, Revision: 02, Memory: 0MB, Maker: Sony
-  * Device tree is enabled.
-  *--> Raspberry Pi 4 Model B Rev 1.2
-  * This Raspberry Pi supports user-level GPIO access.
+  
 root@raspberrypi:/dev# dpkg -i wiringpi-latest.deb
 (Reading database ... 154806 files and directories currently installed.)
 Preparing to unpack wiringpi-latest.deb ...
 Unpacking wiringpi (2.52) over (2.50) ...
 Setting up wiringpi (2.52) ...
 Processing triggers for man-db (2.8.5-2) ...
+
+
 root@raspberrypi:/dev# gpio -v
 gpio version: 2.52
 Copyright (c) 2012-2018 Gordon Henderson
