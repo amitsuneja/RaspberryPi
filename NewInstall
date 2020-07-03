@@ -14,8 +14,128 @@ network={
 6. run angry IP scanner to know IP of new server.
 7. login pi and rapsberry and sudo to root.
 8. passwd root and password oi
-9. change 
+9. vi /etc/ssh/sshd_config
 #PermitRootLogin prohibit-password
 TO
 PermitRootLogin yes
-10. From new session login as root
+
+10. systemctl restart sshd
+
+root@raspberrypi:/etc/ssh# systemctl status sshd
+● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2020-05-27 08:46:34 BST; 1 months 6 days ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+ Main PID: 701 (sshd)
+    Tasks: 1 (limit: 4915)
+   Memory: 3.6M
+   CGroup: /system.slice/ssh.service
+           └─701 /usr/sbin/sshd -D
+
+May 27 08:46:32 raspberrypi systemd[1]: Starting OpenBSD Secure Shell server...
+May 27 08:46:34 raspberrypi sshd[701]: Server listening on 0.0.0.0 port 22.
+May 27 08:46:34 raspberrypi sshd[701]: Server listening on :: port 22.
+May 27 08:46:34 raspberrypi systemd[1]: Started OpenBSD Secure Shell server.
+Jul 03 07:56:24 raspberrypi sshd[785]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.1.5  user=pi
+Jul 03 07:56:26 raspberrypi sshd[785]: Failed password for pi from 192.168.1.5 port 52666 ssh2
+Jul 03 07:56:52 raspberrypi sshd[785]: Accepted password for pi from 192.168.1.5 port 52666 ssh2
+Jul 03 07:56:52 raspberrypi sshd[785]: pam_unix(sshd:session): session opened for user pi by (uid=0)
+
+root@raspberrypi:/etc/ssh# systemctl restart sshd
+
+11. From new session login as root
+12. raspi-config > update
+root@raspberrypi:/etc/ssh# raspi-config
+Get:1 http://archive.raspberrypi.org/debian buster InRelease [32.6 kB]
+Get:2 http://archive.raspberrypi.org/debian buster/main armhf Packages [330 kB]
+Get:3 http://raspbian.raspberrypi.org/raspbian buster InRelease [15.0 kB]
+Get:4 http://raspbian.raspberrypi.org/raspbian buster/main armhf Packages [13.0 MB]
+51% [4 Packages 5,093 kB/13.0 MB 39%]    
+
+
+13. apt-get update
+
+root@raspberrypi:/etc/ssh# apt-get update
+0% [Connecting to raspbian.raspberrypi.org]
+Hit:1 http://raspbian.raspberrypi.org/raspbian buster InRelease
+Hit:2 http://archive.raspberrypi.org/debian buster InRelease
+Reading package lists... Done
+
+
+root@raspberrypi:/etc/ssh# apt-get upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following package was automatically installed and is no longer required:
+  rpi-eeprom-images
+Use 'apt autoremove' to remove it.
+The following packages will be upgraded:
+  arandr ca-certificates firmware-atheros firmware-brcm80211 firmware-libertas firmware-misc-nonfree firmware-realtek libfm-data libfm-extra4 libfm-gtk-data
+  libfm-gtk4 libfm-modules libfm4 libgnutls30 libnode-dev libnode64 libraspberrypi-bin libraspberrypi-dev libraspberrypi-doc libraspberrypi0 libvlc-bin libvlc5
+  libvlccore9 lxpanel lxpanel-data nodejs nodejs-doc pcmanfm pi-greeter pi-package pi-package-data pi-package-session piclone pipanel piwiz raspberrypi-bootloader
+  raspberrypi-kernel raspberrypi-ui-mods rp-bookshelf rp-prefapps rpi-chromium-mods rpi-eeprom rpi-eeprom-images scratch2 vlc vlc-bin vlc-data vlc-l10n
+  vlc-plugin-base vlc-plugin-notify vlc-plugin-qt vlc-plugin-samba vlc-plugin-skins2 vlc-plugin-video-output vlc-plugin-video-splitter vlc-plugin-visualization
+56 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 225 MB of archives.
+After this operation, 7,697 kB disk space will be freed.
+Do you want to continue? [Y/n]
+
+
+Unpacking raspberrypi-kernel (1.20200601-1) over (1.20200512-2) ...
+
+
+
+
+
+
+14. auto remove 
+
+root@raspberrypi:/etc/ssh# apt autoremove
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following packages will be REMOVED:
+  rpi-eeprom-images
+0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+After this operation, 14.3 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 153698 files and directories currently installed.)
+Removing rpi-eeprom-images (7.4-1) ...
+
+
+
+
+15. 
+root@raspberrypi:/etc/ssh# apt-get clean
+
+
+
+
+16. 
+root@raspberrypi:/etc/ssh# apt-get install telnet
+
+
+17.
+root@raspberrypi:/etc/ssh# apt-get install chrony
+
+
+
+18.
+root@raspberrypi:/etc/ssh# systemctl enable chrony.service
+Synchronizing state of chrony.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable chrony
+root@raspberrypi:/etc/ssh# systemctl start chrony.service
+root@raspberrypi:/etc/ssh#
+
+
+
+19.
+raspi-config > Localisation Options > Change Time Zone > Asia > Kolkata
+
+
+
+20.
+apt-get install samba
+
