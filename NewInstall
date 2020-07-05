@@ -205,3 +205,15 @@ root@raspberrypi:/dev# gpio readall
  +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
 root@raspberrypi:/dev#
 
+
+
+root@raspberrypi:~/multi#  apt-get install dnsutils
+root@raspberrypi:~# ln -s /usr/bin/clear /usr/bin/cls
+root@raspberrypi:~# apt-get install apache2
+root@raspberrypi:~# python3 -m pip install tensorflow
+root@raspberrypi:~# python3 -m pip install setuptools  --upgrade
+root@raspberrypi:~# apt-get install libatlas-base-dev
+root@raspberrypi:~# python3 -m pip install --upgrade pip
+root@raspberrypi:~# apt-get install gfortran
+root@raspberrypi:~# python3 -m pip install theano
+root@raspberrypi:~# python3 -m pip install scikit-learn
