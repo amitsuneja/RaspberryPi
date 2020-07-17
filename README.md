@@ -20,6 +20,11 @@ https://www.w3schools.com/graphics/google_maps_intro.asp
 
 https://developers.google.com/maps/solutions/store-locator/clothing-store-locator?csw=1
 
+https://jsfiddle.net/user2314737/06rut61g/ --> Car moving 
+
+https://jsfiddle.net/rcravens/RFHKd/2363/--> Car moving 
+
+
 
 
 -------------------------------------------------------------
