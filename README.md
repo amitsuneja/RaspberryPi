@@ -12,6 +12,7 @@ https://pythonprogramming.net/gpio-raspberry-pi-car-intro/
 https://towardsdatascience.com/deeppicar-part-1-102e03c83f2cb
 
 https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md --> good one
+https://www.pyimagesearch.com/2019/04/22/getting-started-with-google-corals-tpu-usb-accelerator/
 
 https://www.youtube.com/watch?v=N8fH0nc9v9Q , https://sparklers-the-makers.github.io/blog/robotics/realtime-gps-tracker-with-raspberry-pi/
 
