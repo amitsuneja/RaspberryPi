@@ -9,8 +9,8 @@ https://www.electronicshub.org/raspberry-pi-l298n-interface-tutorial-control-dc-
 
 https://pythonprogramming.net/gpio-raspberry-pi-car-intro/ 
 
-https://towardsdatascience.com/deeppicar-part-1-102e03c83f2cb
-
+https://towardsdatascience.com/deeppicar-part-1-102e03c83f2cb , yeah bhi mast hai https://pythonprogramming.net/self-driving-car-python-plays-gta-v/
+ 
 https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md --> good one
 https://www.pyimagesearch.com/2019/04/22/getting-started-with-google-corals-tpu-usb-accelerator/
 
@@ -60,4 +60,5 @@ pip3 install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v2
 pip install keras==2.3.1
 
 pip install opencv-python==3.4.6.27
+
 
