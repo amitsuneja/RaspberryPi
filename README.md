@@ -50,3 +50,9 @@ https://medium.com/fullstackai/how-to-train-an-object-detector-with-your-own-coc
 https://stackoverflow.com/questions/29133085/what-are-keypoints-in-image-processing
 
 https://en.m.wikipedia.org/wiki/Blob_detection
+
+
+
+
+To install tensorflow on raspberry pi4
+pip3 install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v2.1.0/tensorflow-2.1.0-cp37-none-linux_armv7l.whl"
