@@ -58,3 +58,6 @@ To install tensorflow on raspberry pi4
 pip3 install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v2.1.0/tensorflow-2.1.0-cp37-none-linux_armv7l.whl"
 
 pip install keras==2.3.1
+
+pip install opencv-python==3.4.6.27
+
